@@ -11,7 +11,6 @@ module.exports = class MySQLServer {
 
     constructor(config) {
         this.path = 'mysql/bin/mysqld_z.exe';
-        this.host = '127.0.0.1';
         this.port = 3306;
         this.stdio = 'inherit';
         this.env = process.env;
@@ -19,7 +18,8 @@ module.exports = class MySQLServer {
     };
 
     getParameters(){
-        return [];
+        const params =  ['--port', this.port];
+        return params;
     }
 
     run(cb) {

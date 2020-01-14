@@ -1,4 +1,4 @@
-# MySQL Server Manager
+# MySQL Server Manager for Node
 
 Manage and run MySQL Server in node
 
@@ -9,6 +9,11 @@ npm install mysql-server-manager-node
 ```
 
 ## Usage
+
+- Download server files in compressed form from this [link](https://sourceforge.net/projects/miniserver/files/Uniform%20Server%20ZeroXIV/ZeroXIV%20Modules/ZeroXIV_mysql_5_7_28.exe/download) (Windows)
+- Extract the archive and copy **mysql** directory to your project root
+- Now use in your project like this sample code.
+
 ```js
 const MySQLServer = require('mysql-server-manager-node');
 const mysql_server = new MySQLServer({
@@ -17,6 +22,13 @@ const mysql_server = new MySQLServer({
 });
 mysql_server.run(); 
 ```
+
+Remember to close the server on your application close like this
+
+```js
+mysql_server.close();
+```
+
 
 ## Configuration
 Name | Default | Description
@@ -33,7 +45,7 @@ Yes
 
 ## Meta
 
-Atiq Samtia– [@AtiqSamtia](https://github.com/atiqsamtia) – me@atiqsamtia.com
+Atiq Samtia– [@AtiqSamtia](https://twitter.com/atiqsamtia) – me@atiqsamtia.com
 
 Distributed under the GPL3 license.
 
@@ -41,4 +53,5 @@ Distributed under the GPL3 license.
 
 ## Credits (Thank You) 
 OSCAROTERO FOR PHP SERVER (Inspiration)
-https://github.com/oscarotero/php-server-manager
+
+[https://github.com/oscarotero/php-server-manager](https://github.com/oscarotero/php-server-manager)

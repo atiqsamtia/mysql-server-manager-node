@@ -10,6 +10,7 @@ module.exports = class MySQLServer {
     }
 
     constructor(config) {
+        this.path = 'mysql/bin/mysqld_z.exe';
         this.host = '127.0.0.1';
         this.port = 3306;
         this.stdio = 'inherit';
@@ -22,7 +23,7 @@ module.exports = class MySQLServer {
     }
 
     run(cb) {
-        this.process = spawn('mysql/bin/mysqld_z.exe', this.getParameters(), {
+        this.process = spawn(this.path, this.getParameters(), {
             stdio: this.stdio,
             env: this.env
         });

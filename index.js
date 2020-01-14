@@ -10,7 +10,7 @@ module.exports = class MySQLServer {
     }
 
     constructor(config) {
-        this.path = 'mysql/bin/mysqld_z.exe';
+        this.path = 'mysqld';
         this.port = 3306;
         this.stdio = 'inherit';
         this.env = process.env;

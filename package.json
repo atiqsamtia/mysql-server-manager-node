@@ -1,0 +1,15 @@
+{
+  "name": "mysql-server-manager-node",
+  "version": "1.0.0",
+  "description": "Manage MySQL Server built in node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mysql-server",
+    "mysql"
+  ],
+  "author": "Atiq Samtia",
+  "license": "MIT"
+}

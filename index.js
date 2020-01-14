@@ -15,6 +15,22 @@ module.exports = class MySQLServer {
         this.stdio = 'inherit';
         this.env = process.env;
 
+
+        if (config) {
+            Object.keys(config).forEach(name => {
+                if (!(name in this)) {
+                    throw new Error(`Config ${name} is not valid`);
+                }
+
+                if (name === 'env') {
+                    this[name] = Object.assign({}, this[name], config[name]);
+                } else {
+                    this[name] = config[name];
+                }
+            });
+        }
+
+
     };
 
     getParameters(){
